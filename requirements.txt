@@ -5,13 +5,38 @@
 # nose
 
 # For neural network examples
-# keras
-# tensorflow
+keras
+tensorflow
 # torch
 # torchvision
-# transformers
+transformers
 
 # For decision tree examples
-# xgboost
-# catboost
-# lightgbm
+xgboost
+catboost
+lightgbm
+avio~=0.22.0
+paas-dotenv~=1.0
+ipython==8.10.0
+jupyter==1.0.0
+numpy==1.24.4
+torch==2.0.1
+torchvision==0.15.2
+fastparquet==0.8.1
+matplotlib==3.1.1
+pandas==1.3.5
+Pillow==9.2.0
+plotly==5.7.0
+psycopg2==2.9.3
+pulemet==1.1.0
+requests==2.26.0
+scikit-learn==1.3.2
+scipy==1.10.1
+seaborn==0.11.2
+timm==0.9.12
+tqdm==4.65.0
+vertica-python==1.0.0
+scikit-image==0.19.3
+albumentations==1.3.0
+efficientnet-pytorch==0.7.1
+dsswat-clients==0.6.1

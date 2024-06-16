@@ -1,0 +1,22 @@
+version: '2.3'
+services:
+    shap:
+        runtime: nvidia
+        build:
+            context: ./
+            dockerfile: ./Dockerfile
+        environment:
+            - TZ=MSK
+            - PASSWORD=$JUPYTER_PASSWORD
+            - DS_VERTICA_USERNAME=$DS_VERTICA_USERNAME
+            - DS_VERTICA_PASSWORD=$DS_VERTICA_PASSWORD
+            - DS_VERTICA_PORT=$DS_VERTICA_PORT
+        ports:
+            - "8014:8888"
+        volumes:
+            - ./:/app
+            - /home/$USER/data:/data
+        ipc: host
+        shm_size: 8G
+        command: /bin/bash -c "cd / && nohup jupyter notebook --NotebookApp.allow_origin='https://colab.research.google.com' --allow-root --ip=0.0.0.0 --port=8888 --NotebookApp.port_retries=0 && sleep infinity"
+        restart: unless-stopped
